@@ -1,0 +1,7 @@
+DirectoryIndex index.php
+Options -Indexes
+RewriteEngine On
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^(catalog|projects|documents|blog|contacts)\.html$ /$1.php [R=301,L]
+RewriteRule ^(?:templates|server)(?:/|$) - [R=404,L]
+RewriteRule ^router\.php$ - [R=404,L]

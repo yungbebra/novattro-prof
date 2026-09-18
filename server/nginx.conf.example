@@ -1,0 +1,14 @@
+index index.php;
+
+location = /index.html { return 301 /$is_args$args; }
+location = /catalog.html { return 301 /catalog.php$is_args$args; }
+location = /projects.html { return 301 /projects.php$is_args$args; }
+location = /documents.html { return 301 /documents.php$is_args$args; }
+location = /blog.html { return 301 /blog.php$is_args$args; }
+location = /contacts.html { return 301 /contacts.php$is_args$args; }
+
+location ^~ /templates/ { return 404; }
+location ^~ /server/ { return 404; }
+location = /router.php { return 404; }
+
+location / { try_files $uri $uri/ =404; }
